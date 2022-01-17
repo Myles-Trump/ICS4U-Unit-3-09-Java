@@ -27,12 +27,33 @@ public class Unicycle extends Bike {
     */
     private int numOfWheels = 1;
 
+    /**
+    * Defining and setting your lean.
+    */
+    private int lean = 0;
+
+    // getters
+
+    /**
+    * The getter for lean.
+    */
+    public void getLean() {
+        System.out.print("\nYour lean is " + lean + ". (Positive is leaning");
+        System.out.println(" forward, negative is leaning back.)")
+    }
+
     // methods
 
     /**
-    * The honkHorn() method lets the user honk their horn.
+    * The method additiveLean() lets the user change how much they are leaning.
     */
-    public void ringBell() {
-        System.out.println("\nHonk honk!");
+    public int additiveLean(final int addedLean) {
+        if (lean + addedLean <= C20 || lean + addedLean >= -C20) {
+            lean = lean + addedLean;
+            System.out.println("Your lean was set to " + lean + " degrees.");
+        } else if (lean + addedLean > C20 || lean + addedLean < -C20) {
+            System.out.println("Haha, you fell over! Your lean was reset.");
+            lean = 0;
+        }
     }
 }
