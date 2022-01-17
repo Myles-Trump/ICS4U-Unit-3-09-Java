@@ -1,63 +1,41 @@
 /*
-* The "Bike" class
+* The "Truck" class
 *
 * @author Myles Trump
 * @version 1.0
 * @since 2022-01-01
 */
 
-public class Bike extends Vehicle {
+public class Truck extends Vehicle {
+
+    /**
+    * 18.
+    */
+    public static final int C18 = 18;
 
     /**
     * Calling methods from its superclass (Vehicle).
     */
-    public Bike() {
+    public Truck() {
         super();
     }
-
-    // The Bike class has one unique field
-
-    /**
-    * Defining and setting cadence.
-    */
-    private int cadence = 0;
 
     /**
     * Defining and setting number of wheels.
     */
-    private int numOfWheels = 2;
+    private int numOfWheels = C18;
 
-    // getters
+    // Methods
     /**
-    * The getter for cadence.
+    * The provideAir() method changes the rpm of the bike.
     */
-    public void getCadence() {
-        System.out.print("Your current cadence is " + cadence + " rpm.");
+    public void provideAir() {
+        System.out.println("\nYou have recycled your air!");
     }
-
-    // methods
-    /**
-    * The newCadence() method changes the rpm of the bike.
-    * @return nothing
-    * @param inputtedCadence user's new cadence amount
-    */
-    public int newCadence(final int inputtedCadence) {
-        cadence = inputtedCadence;
-        System.out.println("\nYou cadence was set to " + cadence + " rpm.");
-        return cadence;
-    }
-
-    /**
-    * The ringBell() method lets the user ring their bell.
-    */
-    public void ringBell() {
-        System.out.println("\nRing ring!");
-    }
-
     /**
     * The numberOfWheels() method lets the user check the number of wheels.
     */
     public void numberOfWheels() {
-        System.out.println("\nYou bike has " + numOfWheels + " wheels.");
+        System.out.println("\nYour truck has " + numOfWheels + " wheels.");
     }
 }
