@@ -9,9 +9,9 @@
 public class Truck extends Vehicle {
 
     /**
-    * 18.
+    * 4.
     */
-    public static final int C18 = 18;
+    public static final int C4 = 4;
 
     /**
     * Calling methods from its superclass (Vehicle).
@@ -23,7 +23,7 @@ public class Truck extends Vehicle {
     /**
     * Defining and setting number of wheels.
     */
-    private int numOfWheels = C18;
+    private int numOfWheels = C4;
 
     // Methods
     /**
