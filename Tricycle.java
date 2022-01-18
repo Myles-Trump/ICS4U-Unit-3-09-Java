@@ -35,4 +35,10 @@ public class Tricycle extends Bike {
     public void honkHorn() {
         System.out.println("\nHonk honk!");
     }
+    /**
+    * The numberOfWheels() method lets the user check the number of wheels.
+    */
+    public void numberOfWheels() {
+        System.out.println("\nYou tricycle has " + numOfWheels + " wheels.");
+    }
 }

@@ -62,4 +62,11 @@ public class Unicycle extends Bike {
         }
         return addedLean;
     }
+
+    /**
+    * The numberOfWheels() method lets the user check the number of wheels.
+    */
+    public void numberOfWheels() {
+        System.out.println("\nYou unicycle has " + numOfWheels + " wheels.");
+    }
 }

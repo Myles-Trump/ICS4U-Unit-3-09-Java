@@ -211,6 +211,79 @@ final class UseVehicle {
             }
           }
           break;
+        case C4:
+          final Scanner licensePlateChoice1 = new Scanner(System.in);
+          System.out.print("\nEnter your tow truck's license plate: ");
+          String setPlate1 = licensePlateChoice1.nextLine();
+          semiVariable.setLicensePlate(setPlate1);
+
+          while (userInputted1 != C6) {
+            final Scanner userInput1 = new Scanner(System.in);
+            System.out.print("\nWould you like to (input 1) interact with the");
+            System.out.print(" license plate, (input 2) interact with the ");
+            System.out.print("truck's speed, (input 3) cycle the air, ");
+            System.out.print("(input 4) check the number of wheels, (input 5)");
+            System.out.print("toggle your cargo, or (input 6) exit?: ");
+            userInputted1 = userInput1.nextInt();
+            switch (userInputted1) {
+              case 1:
+                final Scanner userChoice = new Scanner(System.in);
+                System.out.print("\nYour license plate is "
+                  + semiVariable.getLicensePlate()
+                  + ", would you like to change it? (y/n): ");
+                switch (userChoice.nextLine()) {
+                  case "y":
+                    final Scanner newPlate = new Scanner(System.in);
+                    System.out.print("\nEnter a new plate: ");
+                    String plateChoice = newPlate.nextLine();
+                    semiVariable.setLicensePlate(plateChoice);
+                    break;
+                  default:
+                    break;
+                }
+                break;
+              case 2:
+                semiVariable.currentSpeed();
+                semiVariable.maximumSpeed();
+                final Scanner newChoice2 = new Scanner(System.in);
+                System.out.print("\nWould you like to (input 1) ");
+                System.out.print("accelerate, (input 2) use the ");
+                System.out.print("brakes, or (input 3) exit?: ");
+                switch (newChoice2.nextInt()) {
+                  case 1:
+                    final Scanner accel = new Scanner(System.in);
+                    System.out.print("\nHow much do you want to ");
+                    System.out.print("accelerate? (mph): ");
+                    semiVariable.accelerate(accel.nextInt());
+                    break;
+                  case 2:
+                    final Scanner brake = new Scanner(System.in);
+                    System.out.print("\nHow much do you want to ");
+                    System.out.print("brake? (mph): ");
+                    semiVariable.brake(brake.nextInt());
+                    break;
+                  default:
+                    System.out.print("\nYou have entered an ");
+                    System.out.print("invalid input.");
+                    break;
+                }
+                break;
+              case C3:
+                semiVariable.provideAir();
+                break;
+              case C4:
+                semiVariable.numberOfWheels();
+                break;
+              case C5:
+                semiVariable.toggleCargo();
+                break;
+              case C6:
+                break;
+              default:
+                break;
+            }
+          }
+          break;
         default:
           System.out.println("You have entered an invalid input!");
           break;

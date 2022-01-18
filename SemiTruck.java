@@ -54,4 +54,10 @@ public class SemiTruck extends Truck {
             System.out.println("\nYou have added cargo!");
         }
     }
+    /**
+    * The numberOfWheels() method lets the user check the number of wheels.
+    */
+    public void numberOfWheels() {
+        System.out.println("\nYou semi-truck has " + numOfWheels + " wheels.");
+    }
 }

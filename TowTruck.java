@@ -36,4 +36,10 @@ public class TowTruck extends Truck {
     public void towVehicle() {
         System.out.println("\nYou have towed someone's vehicle!");
     }
+    /**
+    * The numberOfWheels() method lets the user check the number of wheels.
+    */
+    public void numberOfWheels() {
+        System.out.println("\nYou tow truck has " + numOfWheels + " wheels.");
+    }
 }
