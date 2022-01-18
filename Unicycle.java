@@ -60,5 +60,6 @@ public class Unicycle extends Bike {
             System.out.println("Haha, you fell over! Your lean was reset.");
             lean = 0;
         }
+        return addedLean;
     }
 }

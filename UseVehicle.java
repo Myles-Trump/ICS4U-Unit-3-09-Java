@@ -29,6 +29,11 @@ final class UseVehicle {
   public static final int C5 = 5;
 
   /**
+  * 6.
+  */
+  public static final int C6 = 6;
+
+  /**
   * Prevent instantiation.
   * Throw an exception IllegalStateException.
   * if this ever is called
@@ -99,39 +104,74 @@ final class UseVehicle {
           }
           break;
         case 2:
+          while (userInputted != C4) {
+            final Scanner userInput = new Scanner(System.in);
+            System.out.print("\nWould you like to (input 1) change your ");
+            System.out.print("cadence, (input 2) honk your horn, (input 3) ");
+            System.out.print("check how many wheels you have, or (input 4) ");
+            System.out.print("exit?: ");
+            userInputted = userInput.nextInt();
+            switch (userInputted) {
+              case 1:
+                final Scanner newCadence = new Scanner(System.in);
+                triVariable.getCadence();
+                System.out.print("\nEnter your new cadence: ");
+                int newCad = newCadence.nextInt();
+                if (newCad < 0) {
+                  System.out.println("\nYou can't have a negative cadence!");
+                } else {
+                  triVariable.newCadence(newCad);
+                  System.out.println("\nCadence updated!");
+                }
+                break;
+              case 2:
+                triVariable.honkHorn();
+                break;
+              case C3:
+                triVariable.numberOfWheels();
+                break;
+              case C4:
+                break;
+              default:
+                System.out.println("\nYou have entered an invalid input!");
+                break;
+            }
+          }
+          break;
+        case C3:
           final Scanner licensePlateChoice = new Scanner(System.in);
-          System.out.print("\nEnter your truck's license plate: ");
+          System.out.print("\nEnter your tow truck's license plate: ");
           String setPlate = licensePlateChoice.nextLine();
-          truckVariable.setLicensePlate(setPlate);
+          towVariable.setLicensePlate(setPlate);
 
-          while (userInputted1 != C5) {
+          while (userInputted1 != C6) {
             final Scanner userInput1 = new Scanner(System.in);
             System.out.print("\nWould you like to (input 1) interact with the");
             System.out.print(" license plate, (input 2) interact with the ");
             System.out.print("truck's speed, (input 3) cycle the air, ");
-            System.out.print("(input 4) check the number of doors, or  ");
-            System.out.print("(input 5) exit?: ");
+            System.out.print("(input 4) check the number of wheels, (input 5)");
+            System.out.print("tow a vehicle, or (input 6) exit?: ");
             userInputted1 = userInput1.nextInt();
             switch (userInputted1) {
               case 1:
                 final Scanner userChoice = new Scanner(System.in);
                 System.out.print("\nYour license plate is "
-                  + truckVariable.getLicensePlate()
+                  + towVariable.getLicensePlate()
                   + ", would you like to change it? (y/n): ");
                 switch (userChoice.nextLine()) {
                   case "y":
                     final Scanner newPlate = new Scanner(System.in);
                     System.out.print("\nEnter a new plate: ");
                     String plateChoice = newPlate.nextLine();
-                    truckVariable.setLicensePlate(plateChoice);
+                    towVariable.setLicensePlate(plateChoice);
                     break;
                   default:
                     break;
                 }
                 break;
               case 2:
-                truckVariable.currentSpeed();
-                truckVariable.maximumSpeed();
+                towVariable.currentSpeed();
+                towVariable.maximumSpeed();
                 final Scanner newChoice2 = new Scanner(System.in);
                 System.out.print("\nWould you like to (input 1) ");
                 System.out.print("accelerate, (input 2) use the ");
@@ -141,13 +181,13 @@ final class UseVehicle {
                     final Scanner accel = new Scanner(System.in);
                     System.out.print("\nHow much do you want to ");
                     System.out.print("accelerate? (mph): ");
-                    truckVariable.accelerate(accel.nextInt());
+                    towVariable.accelerate(accel.nextInt());
                     break;
                   case 2:
                     final Scanner brake = new Scanner(System.in);
                     System.out.print("\nHow much do you want to ");
                     System.out.print("brake? (mph): ");
-                    truckVariable.brake(brake.nextInt());
+                    towVariable.brake(brake.nextInt());
                     break;
                   default:
                     System.out.print("\nYou have entered an ");
@@ -156,14 +196,16 @@ final class UseVehicle {
                 }
                 break;
               case C3:
-                truckVariable.provideAir();
+                towVariable.provideAir();
                 break;
               case C4:
-                truckVariable.numberOfWheels();
+                towVariable.numberOfWheels();
                 break;
               case C5:
+                towVariable.towVehicle();
                 break;
-
+              case C6:
+                break;
               default:
                 break;
             }
