@@ -25,7 +25,7 @@ public class Tricycle extends Bike {
     /**
     * Defining and setting number of wheels.
     */
-    private int numOfWheels = 1;
+    private int numOfWheels = 3;
 
     // methods
 

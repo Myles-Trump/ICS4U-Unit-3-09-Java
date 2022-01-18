@@ -150,7 +150,7 @@ final class UseVehicle {
             System.out.print(" license plate, (input 2) interact with the ");
             System.out.print("truck's speed, (input 3) cycle the air, ");
             System.out.print("(input 4) check the number of wheels, (input 5)");
-            System.out.print("tow a vehicle, or (input 6) exit?: ");
+            System.out.print(" tow a vehicle, or (input 6) exit?: ");
             userInputted1 = userInput1.nextInt();
             switch (userInputted1) {
               case 1:
@@ -223,7 +223,7 @@ final class UseVehicle {
             System.out.print(" license plate, (input 2) interact with the ");
             System.out.print("truck's speed, (input 3) cycle the air, ");
             System.out.print("(input 4) check the number of wheels, (input 5)");
-            System.out.print("toggle your cargo, or (input 6) exit?: ");
+            System.out.print(" toggle your cargo, or (input 6) exit?: ");
             userInputted1 = userInput1.nextInt();
             switch (userInputted1) {
               case 1:

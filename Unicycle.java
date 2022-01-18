@@ -53,12 +53,12 @@ public class Unicycle extends Bike {
     * The method additiveLean() lets the user change how much they are leaning.
     */
     public int additiveLean(final int addedLean) {
-        if (lean + addedLean <= C20 || lean + addedLean >= -C20) {
-            lean = lean + addedLean;
-            System.out.println("Your lean was set to " + lean + " degrees.");
-        } else if (lean + addedLean > C20 || lean + addedLean < -C20) {
+        if (lean + addedLean > C20 || lean + addedLean < -C20) {
             System.out.println("Haha, you fell over! Your lean was reset.");
             lean = 0;
+        } else if (lean + addedLean <= C20 && lean + addedLean >= -C20) {
+            lean = lean + addedLean;
+            System.out.println("Your lean was set to " + lean + " degrees.");
         }
         return addedLean;
     }
