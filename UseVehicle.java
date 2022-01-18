@@ -46,13 +46,10 @@ final class UseVehicle {
   }
 
   /**
-  * The starting main() function.
-  *
-  * @param args No args will be used
+  * The start of usingVehicle function.
   */
-  public static void main(final String[] args) {
-
-    Unicycle uniVariable = new Unicycle();
+  public static void usingVehicle() {
+  Unicycle uniVariable = new Unicycle();
     Tricycle triVariable = new Tricycle();
     TowTruck towVariable = new TowTruck();
     SemiTruck semiVariable = new SemiTruck();
@@ -292,5 +289,14 @@ final class UseVehicle {
       System.out.println("\nYou have not entered a valid input.");
     }
   System.out.println("\nDone.");
+  }
+
+  /**
+  * The starting main() function.
+  *
+  * @param args No args will be used
+  */
+  public static void main(final String[] args) {
+    usingVehicle();
   }
 }

@@ -51,6 +51,8 @@ public class Unicycle extends Bike {
 
     /**
     * The method additiveLean() lets the user change how much they are leaning.
+    * @return nothing
+    * @param addedLean lean to be added
     */
     public int additiveLean(final int addedLean) {
         if (lean + addedLean > C20 || lean + addedLean < -C20) {

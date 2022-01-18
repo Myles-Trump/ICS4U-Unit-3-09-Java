@@ -15,6 +15,11 @@ public class Tricycle extends Bike {
         super();
     }
 
+    /**
+    * 3.
+    */
+    public static final int C3 = 3;
+
     // The Bike class has one unique field
 
     /**
@@ -25,7 +30,7 @@ public class Tricycle extends Bike {
     /**
     * Defining and setting number of wheels.
     */
-    private int numOfWheels = 3;
+    private int numOfWheels = C3;
 
     // methods
 
