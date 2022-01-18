@@ -47,42 +47,48 @@ final class UseVehicle {
   */
   public static void main(final String[] args) {
 
-    Bike bikeVariable = new Bike();
-    Truck truckVariable = new Truck();
+    Unicycle uniVariable = new Unicycle();
+    Tricycle triVariable = new Tricycle();
+    TowTruck towVariable = new TowTruck();
+    SemiTruck semiVariable = new SemiTruck();
     int userInputted = 0;
     int userInputted1 = 0;
 
     final Scanner whichVehicle = new Scanner(System.in);
     try {
-      System.out.print("\nWould you like to (input 1) use the bike or ");
-      System.out.print("(input 2) use the truck?: ");
+      System.out.print("\nWould you like to (input 1) use the unicycle, ");
+      System.out.print("(input 2) use the tricycle, (input 3) use the ");
+      System.out.print("tow truck, or (input 4) use the semi-truck?: ");
       switch (whichVehicle.nextInt()) {
         case 1:
           while (userInputted != C4) {
             final Scanner userInput = new Scanner(System.in);
             System.out.print("\nWould you like to (input 1) change your ");
-            System.out.print("cadence, (input 2) ring your bell, (input 3) ");
+            System.out.print("cadence, (input 2) change your lean, (input 3) ");
             System.out.print("check how many wheels you have, or (input 4) ");
             System.out.print("exit?: ");
             userInputted = userInput.nextInt();
             switch (userInputted) {
               case 1:
                 final Scanner newCadence = new Scanner(System.in);
-                bikeVariable.getCadence();
+                uniVariable.getCadence();
                 System.out.print("\nEnter your new cadence: ");
                 int newCad = newCadence.nextInt();
                 if (newCad < 0) {
                   System.out.println("\nYou can't have a negative cadence!");
                 } else {
-                  bikeVariable.newCadence(newCad);
+                  uniVariable.newCadence(newCad);
                   System.out.println("\nCadence updated!");
                 }
                 break;
               case 2:
-                bikeVariable.ringBell();
+                uniVariable.getLean();
+                System.out.print("\nEnter your new lean (20 to -20): ");
+                final Scanner newLean = new Scanner(System.in);
+                uniVariable.additiveLean(newLean.nextInt());
                 break;
               case C3:
-                bikeVariable.numberOfWheels();
+                uniVariable.numberOfWheels();
                 break;
               case C4:
                 break;

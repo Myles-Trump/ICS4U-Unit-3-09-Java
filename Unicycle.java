@@ -15,6 +15,11 @@ public class Unicycle extends Bike {
         super();
     }
 
+    /**
+    * 20.
+    */
+    public static final int C20 = 20;
+
     // The Bike class has one unique field
 
     /**
@@ -39,7 +44,7 @@ public class Unicycle extends Bike {
     */
     public void getLean() {
         System.out.print("\nYour lean is " + lean + ". (Positive is leaning");
-        System.out.println(" forward, negative is leaning back.)")
+        System.out.println(" forward, negative is leaning back.)");
     }
 
     // methods
