@@ -46,22 +46,19 @@ final class UseVehicle {
   }
 
   /**
-  * The start of usingVehicle function.
+  * The start of bikeChoices() function.
   */
-  public static void usingVehicle() {
-  Unicycle uniVariable = new Unicycle();
+  public static final void bikeChoices() {
+    Unicycle uniVariable = new Unicycle();
     Tricycle triVariable = new Tricycle();
-    TowTruck towVariable = new TowTruck();
-    SemiTruck semiVariable = new SemiTruck();
     int userInputted = 0;
     int userInputted1 = 0;
 
-    final Scanner whichVehicle = new Scanner(System.in);
+    final Scanner whichBike = new Scanner(System.in);
     try {
       System.out.print("\nWould you like to (input 1) use the unicycle, ");
-      System.out.print("(input 2) use the tricycle, (input 3) use the ");
-      System.out.print("tow truck, or (input 4) use the semi-truck?: ");
-      switch (whichVehicle.nextInt()) {
+      System.out.print(" or (input 2) use the tricycle?: ");
+      switch (whichBike.nextInt()) {
         case 1:
           while (userInputted != C4) {
             final Scanner userInput = new Scanner(System.in);
@@ -135,7 +132,32 @@ final class UseVehicle {
             }
           }
           break;
-        case C3:
+        default:
+          System.out.println("You have entered an invalid input!");
+          break;
+     }
+    } catch (java.util.InputMismatchException errorCode) {
+      System.out.println("\nYou have not entered a valid input.");
+    }
+  System.out.println("\nDone.");
+  }
+
+  /**
+  * The start of truckChoices() function.
+  */
+  public static final void truckChoices() {
+    TowTruck towVariable = new TowTruck();
+    SemiTruck semiVariable = new SemiTruck();
+    int userInputted = 0;
+    int userInputted1 = 0;
+
+    final Scanner whichVehicle = new Scanner(System.in);
+    try {
+      System.out.print("\nWould you like to (input 1) use the unicycle, ");
+      System.out.print("(input 2) use the tricycle, (input 3) use the ");
+      System.out.print("tow truck, or (input 4) use the semi-truck?: ");
+      switch (whichVehicle.nextInt()) {
+        case 1:
           final Scanner licensePlateChoice = new Scanner(System.in);
           System.out.print("\nEnter your tow truck's license plate: ");
           String setPlate = licensePlateChoice.nextLine();
@@ -208,7 +230,7 @@ final class UseVehicle {
             }
           }
           break;
-        case C4:
+        case 2:
           final Scanner licensePlateChoice1 = new Scanner(System.in);
           System.out.print("\nEnter your tow truck's license plate: ");
           String setPlate1 = licensePlateChoice1.nextLine();
@@ -297,6 +319,20 @@ final class UseVehicle {
   * @param args No args will be used
   */
   public static void main(final String[] args) {
-    usingVehicle();
+    final Scanner biOrTr = new Scanner(System.in);
+    System.out.print("Do you want to use a (input 1) bike type or a (input 2)");
+    System.out.print(" truck type?: ");
+    int bikeOrTruck = biOrTr.nextInt();
+    switch (bikeOrTruck) {
+      case 1:
+        bikeChoices();
+        break;
+      case 2:
+        truckChoices();
+        break;
+      default:
+        System.out.println("\nYou have not entered a valid input!");
+        break;
+    }
   }
 }
