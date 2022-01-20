@@ -153,9 +153,8 @@ final class UseVehicle {
 
     final Scanner whichVehicle = new Scanner(System.in);
     try {
-      System.out.print("\nWould you like to (input 1) use the unicycle, ");
-      System.out.print("(input 2) use the tricycle, (input 3) use the ");
-      System.out.print("tow truck, or (input 4) use the semi-truck?: ");
+      System.out.print("\nWould you like to (input 1) use the tow truck, or ");
+      System.out.print("(input 2) use the semi truck?: ");
       switch (whichVehicle.nextInt()) {
         case 1:
           final Scanner licensePlateChoice = new Scanner(System.in);
@@ -173,39 +172,29 @@ final class UseVehicle {
             userInputted1 = userInput1.nextInt();
             switch (userInputted1) {
               case 1:
-                final Scanner userChoice = new Scanner(System.in);
                 System.out.print("\nYour license plate is "
-                  + towVariable.getLicensePlate()
-                  + ", would you like to change it? (y/n): ");
-                switch (userChoice.nextLine()) {
-                  case "y":
-                    final Scanner newPlate = new Scanner(System.in);
-                    System.out.print("\nEnter a new plate: ");
-                    String plateChoice = newPlate.nextLine();
-                    towVariable.setLicensePlate(plateChoice);
-                    break;
-                  default:
-                    break;
-                }
+                  + towVariable.getLicensePlate());
+                final Scanner newPlate = new Scanner(System.in);
+                System.out.print("\nEnter a new plate: ");
+                towVariable.setLicensePlate(newPlate.nextLine());
                 break;
               case 2:
                 towVariable.currentSpeed();
                 towVariable.maximumSpeed();
                 final Scanner newChoice2 = new Scanner(System.in);
-                System.out.print("\nWould you like to (input 1) ");
-                System.out.print("accelerate, (input 2) use the ");
-                System.out.print("brakes, or (input 3) exit?: ");
+                System.out.print("\nWould you like to (input 1) accelerate, ");
+                System.out.print("(input 2) use the brakes, or (input 3) exit");
+                System.out.print("?: ");
                 switch (newChoice2.nextInt()) {
                   case 1:
                     final Scanner accel = new Scanner(System.in);
                     System.out.print("\nHow much do you want to ");
-                    System.out.print("accelerate? (mph): ");
+                    System.out.print("accelerate?: ");
                     towVariable.accelerate(accel.nextInt());
                     break;
                   case 2:
                     final Scanner brake = new Scanner(System.in);
-                    System.out.print("\nHow much do you want to ");
-                    System.out.print("brake? (mph): ");
+                    System.out.print("\nHow much do you want to brake?: ");
                     towVariable.brake(brake.nextInt());
                     break;
                   default:
@@ -248,18 +237,11 @@ final class UseVehicle {
               case 1:
                 final Scanner userChoice = new Scanner(System.in);
                 System.out.print("\nYour license plate is "
-                  + semiVariable.getLicensePlate()
-                  + ", would you like to change it? (y/n): ");
-                switch (userChoice.nextLine()) {
-                  case "y":
-                    final Scanner newPlate = new Scanner(System.in);
-                    System.out.print("\nEnter a new plate: ");
-                    String plateChoice = newPlate.nextLine();
-                    semiVariable.setLicensePlate(plateChoice);
-                    break;
-                  default:
-                    break;
-                }
+                  + semiVariable.getLicensePlate());
+                final Scanner newPlate = new Scanner(System.in);
+                System.out.print("\nEnter a new plate: ");
+                String plateChoice = newPlate.nextLine();
+                semiVariable.setLicensePlate(plateChoice);
                 break;
               case 2:
                 semiVariable.currentSpeed();
@@ -272,13 +254,12 @@ final class UseVehicle {
                   case 1:
                     final Scanner accel = new Scanner(System.in);
                     System.out.print("\nHow much do you want to ");
-                    System.out.print("accelerate? (mph): ");
+                    System.out.print("accelerate?: ");
                     semiVariable.accelerate(accel.nextInt());
                     break;
                   case 2:
                     final Scanner brake = new Scanner(System.in);
-                    System.out.print("\nHow much do you want to ");
-                    System.out.print("brake? (mph): ");
+                    System.out.print("\nHow much do you want to brake?: ");
                     semiVariable.brake(brake.nextInt());
                     break;
                   default:
