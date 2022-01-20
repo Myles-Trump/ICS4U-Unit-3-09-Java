@@ -48,7 +48,7 @@ final class UseVehicle {
   /**
   * The start of bikeChoices() function.
   */
-  public static final void bikeChoices() {
+  public static void bikeChoices() {
     Unicycle uniVariable = new Unicycle();
     Tricycle triVariable = new Tricycle();
     int userInputted = 0;
@@ -145,7 +145,7 @@ final class UseVehicle {
   /**
   * The start of truckChoices() function.
   */
-  public static final void truckChoices() {
+  public static void truckChoices() {
     TowTruck towVariable = new TowTruck();
     SemiTruck semiVariable = new SemiTruck();
     int userInputted = 0;
